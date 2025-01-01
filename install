@@ -3,6 +3,7 @@
 apt update 
 apt upgrade -y -o Dpkg::Options::="--force-confnew"
 apt install -y binutils python3 python3-pip autoconf bison clang coreutils curl findutils apr apr-util postgresql openssl readline libffi libgmp libpcap libsqlite libgrpc libtool libxml2 libxslt ncurses make ncurses-utils ncurses git wget unzip zip tar termux-tools termux-elf-cleaner pkg-config git ruby -o Dpkg::Options::="--force-confnew"
+apt install build-essential patch ruby-dev zlib1g-dev liblzma-dev libxml2-dev libxslt1-dev -y
 python3 -m pip install requests
 
 #
@@ -21,8 +22,7 @@ cd $PREFIX/opt/metasploit-framework
 
 #
 gem install bundler
-NOKOGIRI_VERSION=$(cat Gemfile.lock | grep -i nokogiri | sed 's/nokogiri [\(\)]/(/g' | cut -d ' ' -f 5 | grep -oP "(.).[[:digit:]][\w+]?[.].")
-gem install nokogiri -v $NOKOGIRI_VERSION -- --with-cflags="-Wno-implicit-function-declaration -Wno-deprecated-declarations -Wno-incompatible-function-pointer-types" --use-system-libraries
+gem install nokogiri --with-cflags="-Wno-implicit-function-declaration -Wno-deprecated-declarations -Wno-incompatible-function-pointer-types" --use-system-libraries
 bundle install
 
 #
