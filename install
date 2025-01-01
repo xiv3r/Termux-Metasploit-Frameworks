@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-pkg update -y
-pkg upgrade -y -o Dpkg::Options::="--force-confnew"
-pkg install -y binutils python autoconf bison clang coreutils curl findutils apr apr-util postgresql openssl readline libffi libgmp libpcap libsqlite libgrpc libtool libxml2 libxslt ncurses make ncurses-utils ncurses git wget unzip zip tar termux-tools termux-elf-cleaner pkg-config git ruby -o Dpkg::Options::="--force-confnew"
+apt update 
+apt upgrade -y -o Dpkg::Options::="--force-confnew"
+apt install -y binutils python autoconf bison clang coreutils curl findutils apr apr-util postgresql openssl readline libffi libgmp libpcap libsqlite libgrpc libtool libxml2 libxslt ncurses make ncurses-utils ncurses git wget unzip zip tar termux-tools termux-elf-cleaner pkg-config git ruby -o Dpkg::Options::="--force-confnew"
 python3 -m pip install requests
 
 #
