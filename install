@@ -2,7 +2,7 @@
 
 apt update 
 apt upgrade -y -o Dpkg::Options::="--force-confnew"
-apt install -y binutils python3 python3-pip autoconf bison clang coreutils curl findutils apr apr-util postgresql openssl readline libffi libgmp libpcap libsqlite libgrpc libtool libxml2 libxslt ncurses make ncurses-utils ncurses git wget unzip zip tar termux-tools termux-elf-cleaner pkg-config git ruby -o Dpkg::Options::="--force-confnew"
+apt install -y binutils python3 python-pip autoconf bison clang coreutils curl findutils apr apr-util postgresql openssl readline libffi libgmp libpcap libsqlite libgrpc libtool libxml2 libxslt ncurses make ncurses-utils ncurses git wget unzip zip tar termux-tools termux-elf-cleaner pkg-config git ruby -o Dpkg::Options::="--force-confnew"
 apt install ruby clang make pkg-config libxml2 libxslt -y
 python3 -m pip install requests
 
