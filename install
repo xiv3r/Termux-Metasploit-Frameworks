@@ -18,6 +18,6 @@ cd metasploit-framework-master
 gem install bundler
 bundle install
 ###
-echo export PATH=$PATH:$HOME/metasploit-framework-master > $PREFIX/etc/bashrc
-echo export MSF_DATABASE_CONFIG=$HOME/metasploit-framework-master/config/database.yml > $PREFIX/etc/bashrc
+echo export PATH=$PATH:$HOME/metasploit-framework-master >> $PREFIX/etc/bash.bashrc
+echo export MSF_DATABASE_CONFIG=$HOME/metasploit-framework-master/config/database.yml >> $PREFIX/etc/bash.bashrc
 source $PREFIX/etc/bash.bashrc
