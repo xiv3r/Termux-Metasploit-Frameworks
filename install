@@ -3,7 +3,7 @@
 apt update 
 apt upgrade -y -o Dpkg::Options::="--force-confnew"
 apt install -y binutils python3 python3-pip autoconf bison clang coreutils curl findutils apr apr-util postgresql openssl readline libffi libgmp libpcap libsqlite libgrpc libtool libxml2 libxslt ncurses make ncurses-utils ncurses git wget unzip zip tar termux-tools termux-elf-cleaner pkg-config git ruby -o Dpkg::Options::="--force-confnew"
-apt install build-essential patch ruby-dev zlib1g-dev liblzma-dev libxml2-dev libxslt1-dev -y
+apt install ruby clang make pkg-config libxml2 libxslt -y
 python3 -m pip install requests
 
 #
@@ -23,6 +23,7 @@ cd $PREFIX/opt/metasploit-framework
 #
 gem install bundler
 gem install nokogiri
+gem install nokogiri --platform ruby
 bundle install
 
 #
