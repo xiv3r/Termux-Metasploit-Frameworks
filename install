@@ -2,22 +2,14 @@
 
 cd $HOME
 ###
-pkg install -y curl wget git ruby ncurses-utils postgresql
-###
-mkdir -p $PREFIX/var/lib/postgresql
-###
-initdb -D $PREFIX/var/lib/postgresql
-###
-pg_ctl -D $PREFIX/var/lib/postgresql start
-createdb msf_database
-###
-curl -LO https://github.com/rapid7/metasploit-framework/archive/refs/heads/master.zip
-unzip master.zip
-cd metasploit-framework-master
+pkg update && pkg -y upgrade 
+pkg install -y git ruby
 ###
 gem install bundler
+###
+git clone https://github.com/rapid7/metasploit-framework.git 
+cd metasploit-framework
+###
 bundle install
 ###
-echo export PATH=$PATH:$HOME/metasploit-framework-master >> $PREFIX/etc/bash.bashrc
-echo export MSF_DATABASE_CONFIG=$HOME/metasploit-framework-master/config/database.yml >> $PREFIX/etc/bash.bashrc
-source $PREFIX/etc/bash.bashrc
+ln -sf msfconsole $PREFIX/bin/msfconsole
